@@ -31,6 +31,31 @@ header img {
   .nav-max {
     display: none;
   }
+  .col-narrow {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .col-narrow p {
+    margin: 2px 0;
+  }
+  .col-wide {
+    width: 100%;
+  }
+  nav a {
+   width: 20%;
+   padding: 10px 0;
+   display: inline-block;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: 700;
+   font-size: 16px;
+   color: white;
+   border-radius: 0.5rem;
+  }
+  .col-school {
+    width: 100%;
+    display: block;
+  }
 }
 
 @media (min-width: 660px) {
@@ -50,6 +75,10 @@ header img {
     padding: 0 20px 10px 20px;
     float: left;
   }
+  #education .entry {
+    width: 50%;
+    display: inline-block;
+  }
 }
 
 @media (min-width: 869px) {
@@ -59,6 +88,16 @@ header img {
   .nav-max {
     position: sticky;
     display: block;
+  }
+  nav a {
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    border-radius: 0.5rem;
   }
 }
 
@@ -73,8 +112,8 @@ header img {
   }
 
   .nav-max {
-    border-radius: 1rem;
-    margin: 1rem auto;
+    border-radius: 0.5rem;
+    margin: 0.5rem auto;
   }
 }
 
@@ -155,7 +194,6 @@ a:hover {
 .entry {
   padding: 10px 0 10px 20px;
   margin-bottom: 20px;
-  /* border-bottom: 2px dashed rgba(0,0,0,0.35); */
   border-radius: 10px;
 }
 
@@ -192,6 +230,7 @@ a:hover {
 /* Header
 -------------------------------*/
 header {
+  padding-top: 1rem;
   background: #ff6188;
 }
 
@@ -227,49 +266,34 @@ header h2 {
 /* Navigation
 -----------------------------*/
 nav {
-  z-index: 100;
-  position: sticky;
   text-align: center;
-  background: #ff6188;
+  font-size: 0;
   animation: fade-in 1s linear;
 }
-.navbar {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-}
 
-.navbar a {
-  padding: 15px 35px;
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  border-radius: 10px;
-}
-
-.navbar a:hover {
+nav a:hover {
   background: white;
   color: #ff6188;
-  font-weight: 700;
   transition: all 0.2s linear;
 }
 
 .nav-max {
-  top: 10px;
-  max-width: 1000px;
-  padding: 10px 50px; /*Closes the white gap between the sections */
-  overflow: auto;
+  z-index: 200;
+  top: 0;
+  position: fixed;
+  background: #ff6188;
+  width: 100%;
 }
 
 .nav-min {
-  bottom: 10px;
-  max-width: 1000px;
-  border-radius: 1rem;
-  margin: 1rem auto;
+  z-index: 200;
+  bottom: 0;
+  position: fixed;
+  background: #ff6188;
+  width: 100%;
+  border-radius: 0rem;
+  margin: 0rem auto;
   padding: 10px 50px; /*Closes the white gap between the sections */
-  overflow: auto;
 }
 
 /* Footer
@@ -390,12 +414,6 @@ h3 ~ p {
   color: #a9dc76;
 }
 
-#education .entry {
-  width: 50%;
-  /* min-height: 40px; */
-  /* padding: 0 20px 10px 20px; */
-  display: inline-block;
-}
 
 /* Hobbies
 ------------------------------*/
@@ -412,10 +430,10 @@ h3 ~ p {
 }
 
 .col-hobby {
-  width: 15%;
-  min-height: 90px;
-  padding: 5px 20px 0px 20px;
-  margin-right: 20px;
+  /* width: 15%; */
+  /* min-height: 90px; */
+  /* padding: 5px 20px 0px 20px; */
+  /* margin-right: 20px; */
   float: left;
 }
 
