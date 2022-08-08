@@ -1,83 +1,28 @@
-// import JOBS from "./database/career.json" assert {type: "json"};
-// console.log(JOBS);
-
 import SKILLS from "./database/skills.js";
 import JOBS from "./database/career.js"
 import SCHOOLS from "./database/education.js";
 import HOBBIES from "./database/hobbies.js";
-// import CONTACTS from "./database/contact.js";
+import CONTACTS from "./database/contact.js";
+import NAVBAR from "./database/navbar.js";
 
 const body = document.querySelector("body");
 const main = document.querySelector("main");
 const header = document.querySelector("header");
 
-// Create a taskbar
-const taskBar = document.createElement("div");
-taskBar.setAttribute("id", "taskBar");
-
-// Display time & date
-const clock = document.createElement("div");
-clock.setAttribute("id", "clock");
-const date = document.createElement("div");
-clock.setAttribute("id", "date");
-const time = document.createElement("div");
-clock.setAttribute("id", "time");
-
-header.appendChild(taskBar);
 
 // Create the top navbar
-
-// Perhaps I'll expand the array below into a collection of objects
-// or arrays containin the links and their relevant details
-// i.e. fontawesome icons, etc.
-
-const navItems = ["Skills", "Career", "Education", "Hobbies", "Contact"];
 const topNav = document.createElement("nav");
 topNav.setAttribute("role", "navigation");
 const topNavList = document.createElement("div");
 topNavList.classList.add("nav-max");
 
 // Populate the navbar
-for (let i = 0; i < navItems.length; i++) {
-  // let item = document.createElement("li");
+for (let i = 0; i < NAVBAR.length; i++) {
   let itemLink = document.createElement("a");
-  let itemIcon = document.createElement("i");
-  let description;
-  itemIcon.classList.add("fas");
-  switch (true) {
-    case navItems[i] === "Skills":
-      itemLink.href = "#skills";
-      itemIcon.classList.add("fa-star");
-      description = "Skills";
-      break;
-    case navItems[i] === "Career":
-      itemLink.href = "#career";
-      itemIcon.classList.add("fa-briefcase");
-      description = "Career";
-      break;
-    case navItems[i] === "Education":
-      itemLink.href = "#education";
-      itemIcon.classList.add("fa-graduation-cap");
-      description = "Qualifications";
-      break;
-    case navItems[i] === "Hobbies":
-      itemLink.href = "#hobbies";
-      itemIcon.classList.add("fa-heart");
-      description = "Interests";
-      break;
-    case navItems[i] === "Contact":
-      itemLink.href = "#contact";
-      itemIcon.classList.add("fa-envelope");
-      description = "Contact";
-      break;
-  }
-  let itemText = document.createTextNode(description);
-  itemLink.appendChild(itemIcon);
-  itemLink.appendChild(itemText);
-  // item.appendChild(itemLink);
+  itemLink.href = `${NAVBAR[i].link}`;
+  itemLink.innerHTML = `<i class="fas ${NAVBAR[i].icon}"></i>${NAVBAR[i].title}`;
   topNavList.append(itemLink);
 }
-// Append the links to the top navbar
 topNav.appendChild(topNavList);
 main.appendChild(topNav);
 
@@ -88,45 +33,12 @@ const bottomNavList = document.createElement("div");
 bottomNavList.classList.add("nav-min");
 
 // Populate the navbar
-for (let i = 0; i < navItems.length; i++) {
+for (let i = 0; i < NAVBAR.length; i++) {
   let itemLink = document.createElement("a");
-  let itemIcon = document.createElement("i");
-  itemIcon.setAttribute("aria-hidden", true);
-  let itemSpan = document.createElement("span");
-  itemIcon.classList.add("fas");
-  switch (true) {
-    case navItems[i] === "Skills":
-      itemLink.href = "#skills";
-      itemIcon.classList.add("fa-star", "fa-2x");
-      itemSpan.innerHTML = "Skills";
-      break;
-    case navItems[i] === "Career":
-      itemLink.href = "#career";
-      itemIcon.classList.add("fa-briefcase", "fa-2x");
-      itemSpan.innerHTML = "Career";
-      break;
-    case navItems[i] === "Education":
-      itemLink.href = "#education";
-      itemIcon.classList.add("fa-graduation-cap", "fa-2x");
-      itemSpan.innerHTML = "Qualifications";
-      break;
-    case navItems[i] === "Hobbies":
-      itemLink.href = "#hobbies";
-      itemIcon.classList.add("fa-heart", "fa-2x");
-      itemSpan.innerHTML = "Interests";
-      break;
-    case navItems[i] === "Contact":
-      itemLink.href = "#contact";
-      itemIcon.classList.add("fa-envelope", "fa-2x");
-      itemSpan.innerHTML = "Contact";
-      break;
-  }
-  itemSpan.classList.add("sr-only");
-  itemLink.appendChild(itemIcon);
-  itemLink.appendChild(itemSpan);
+  itemLink.href = `${NAVBAR[i].link}`;
+  itemLink.innerHTML = `<i aria-hidden="true" class="fas ${NAVBAR[i].icon} fa-2x"></i><span class="sr-only">${NAVBAR[i].title}</span>`;
   bottomNavList.append(itemLink);
 }
-// Append the links to the top navbar
 bottomNav.appendChild(bottomNavList);
 main.appendChild(bottomNav);
 
@@ -318,12 +230,13 @@ email.classList.add("contact-me")
 email.href = `mailto:${greeting.email}`;
 email.innerHTML = `<i class="fas fa-2x fa-envelope" aria-hidden="true"></i>  &nbsp;Let's Keep in Touch!<span class="sr-only">Send an Email to James Arrow</span>`;
 
-// const contactList = document.createElement("ul");
-// for (let i=0; i<CONTACTS.length;i++) {
-//   let contactItem = document.createElement("li");
-//   contactItem.innerHTML = `<a href="${CONTACTS[i].link}"><i class="${CONTACTS[i].icon}"></i></a>`;
-//   contactList.appendChild(contactItem);
-// };
+const contactList = document.createElement("div");
+for (let i=0; i<CONTACTS.length;i++) {
+  let contactItem = document.createElement("a");
+  contactItem.href = `${CONTACTS[i].link}`;
+  contactItem.innerHTML = `<i class="${CONTACTS[i].icon}"></i>`;
+  contactList.appendChild(contactItem);
+};
 
 const year = new Date();
 const copyright = document.createElement("p");
@@ -334,7 +247,7 @@ backToTop.href = "#top";
 backToTop.innerHTML = `<i class="fas fa-arrow-circle-up"></i>&nbsp;Back to Top`
 
 footer.appendChild(email);
-// footer.appendChild(contactList);
+footer.appendChild(contactList);
 footer.appendChild(copyright);
 footer.appendChild(backToTop);
 body.appendChild(footer);
