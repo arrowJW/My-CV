@@ -1,0 +1,434 @@
+/* Monokai Color Palette
+red:    #ff6188;
+orange: #fc9867;
+yellow: #ffd866;
+green:  #a9dc76;
+blue:   #78dce8;
+purple: #ab9df2;
+*/
+
+
+/* Global Styles
+-------------------------------*/
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('../fonts/UbuntuMono-R.ttf') format('truetype'),
+  url('../fonts/UbuntuMono-B.ttf') format('truetype'),
+  url('../fonts/UbuntuMono-BI.ttf') format('truetype'),
+  url('../fonts/UbuntuMono-RI.ttf') format('truetype');
+}
+
+html {
+  font-family: 'Ubuntu Mono', monospace;
+  box-sizing: border-box;
+  /* apply a natural box layout model to all elements,
+  but allowing components to change */
+
+  background: #263238;
+  /* background: #f5f3f4;*/
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+body {
+  margin: 0; /*Removes white border around body */
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-top: 0;
+  padding: 5px 0 5px 10px;
+}
+h3 {
+  margin: 0;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+.content-wrap {
+  max-width: 950px;
+  overflow: auto;
+  border: solid 0.3rem;
+  padding: 0 1rem;
+}
+
+.table {
+  display: flex;
+  width: 100%;
+}
+
+.entry {
+  padding: 10px 0 10px 20px;
+  margin-bottom: 10px;
+}
+
+.entry:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.entry:hover {
+  color: #263238;
+  font-weight: bold;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.description {
+  margin-bottom: 25px;
+}
+.description p:first-of-type {
+  margin-top: 0; /* Keeps the top of the job descriptions in line with the narrow column */
+}
+.description ul li {
+  margin: 10px 0;
+}
+
+
+/* Media Queries for phones (256px)
+-----------------------------------*/
+
+@media (min-width: 256px) {
+  header {
+    text-align: center;
+  }
+header img {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .nav-min {
+    display: block;
+  }
+  .nav-max {
+    display: none;
+  }
+  .col-narrow {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .col-narrow p {
+    margin: 2px 0;
+  }
+  .col-wide {
+    width: 100%;
+  }
+  .hobby-narrow {
+    margin-bottom: 0.7rem;
+  }
+  nav a {
+   background: #263238;
+   width: 20%;
+   padding: 10px 0;
+   display: inline-block;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: 700;
+   font-size: 16px;
+   color: #939ba4;
+  }
+  .col-school {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+/* Media Queries for medium screens (256px)
+-----------------------------------*/
+@media (min-width: 660px) {
+  .content-wrap {
+    margin: 1rem auto;
+  }
+  header {
+    text-align: left;
+  }
+  .hobby-narrow {
+    width: 15%;
+    min-height: 90px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    float: left;
+  }
+  .hobby-wide {
+    width: 85%;
+    min-height: 90px;
+    padding: 0 20px 10px 20px;
+    float: left;
+  }
+  .col-narrow {
+    width: 30%;
+    min-height: 90px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    float: left;
+  }
+  .col-wide {
+    width: 70%;
+    min-height: 90px;
+    padding: 0 20px 10px 20px;
+    float: left;
+  }
+  #education .entry {
+    width: 50%;
+    display: inline-block;
+  }
+}
+
+/* Media Queries for large screens
+-----------------------------------*/
+@media (min-width: 869px) {
+  .content-wrap {
+    margin: 2rem auto;
+  }
+  .nav-min {
+    display: none;
+  }
+  .nav-max {
+    position: sticky;
+    display: block;
+  }
+  nav a {
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    color: #939ba4;
+  }
+  header {
+    background: #263238;
+    box-shadow: 0px 0px 20px 2px #ff6188;
+  }
+  #skills {
+    background: #263238;
+    box-shadow: 0px 0px 20px 2px #fc9867;
+  }
+  #career {
+    background: #263238;
+    box-shadow: 0px 0px 20px 2px #ffd866;
+  }
+  #education {
+    background: #263238;
+    box-shadow: 0px 0px 20px 2px #a9dc76;
+  }
+  #hobbies {
+    background: #263238;
+    box-shadow: 0px 0px 20px 2px #78dce8;
+  }
+  #contact {
+    background: #263238;
+    box-shadow: 0px 0px 20px 2px #ab9df2;
+  }
+}
+
+/* Header
+-------------------------------*/
+header {
+  color: #ff6188;
+  border: #ff6188;
+}
+
+header h1, header h2 {
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+}
+
+header p {
+  font-weight: 600;
+}
+
+header h1 {
+  padding: 0px;
+  margin-bottom: 10px;
+}
+
+header h2 {
+  border-bottom: dashed;
+  padding: 0px 10px 10px 0px;
+}
+
+
+/* Navigation
+-----------------------------*/
+nav {
+  text-align: center;
+  font-size: 0;
+}
+
+nav a:hover {
+  background: #939ba4;
+  color: #263238;
+}
+
+.nav-max {
+  z-index: 200;
+  top: 0;
+  position: fixed;
+  text-align: center;
+  color: #939ba4;
+  width: 100%;
+  margin: 0rem auto;
+}
+
+.nav-min {
+  z-index: 200;
+  bottom: 0;
+  position: fixed;
+  color: #ff6188;
+  width: 100%;
+  margin: 0rem auto;
+}
+
+/* Key Skills stylesheet
+-------------------------------*/
+#skills {
+  color: #fc9867;
+  position: relative;
+}
+
+#skills h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #fc9867;
+}
+
+#skills h3 {
+  text-transform: uppercase;
+  border: solid;
+  padding: 10px 5px 0 5px;
+  font-size: 0.8rem;
+  line-height: 2em;
+  text-align: center;
+  min-height: 45px;
+}
+
+#skills li {
+  width: 100%;
+  text-align: left;
+  list-style-type: none;
+  padding: 0px 5px;
+  margin: 10px auto;
+  border: dashed 2px;
+}
+
+.col-skill {
+  display: inline-block;
+  justify-content: center;
+  padding-right: 5px;
+  width: 25%;
+}
+
+/* Work Experience stylesheet
+-------------------------------*/
+#career {
+  color: #ffd866;
+  position: relative;
+}
+
+#career .entry:hover {
+  background: #ffd866;
+}
+
+#career h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #ffd866;
+}
+
+h3 ~ p {
+  margin: 0;
+}
+
+/* Education stylesheet
+-------------------------------*/
+#education {
+  color:#a9dc76;
+  position: relative;
+}
+
+#education .entry:hover {
+  background: #a9dc76;
+}
+
+#education h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #a9dc76;
+}
+
+
+/* Hobbies
+------------------------------*/
+#hobbies {
+  color: #78dce8;
+  position: relative;
+}
+
+#hobbies .entry:hover {
+  background: #78dce8;
+}
+
+#hobbies h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #78dce8;
+}
+
+
+
+/* Footer
+------------------------*/
+#contact {
+  text-align: center;
+  color: #ab9df2;
+  position: relative;
+}
+
+#contact h2 {
+  padding: 5px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+}
+
+.contact-me {
+  font-size: 1.5rem;
+  border: dashed;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 45px;
+  font-weight: bolder;
+  width: 100%;
+  padding: 0px 5px;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+#contact a {
+  padding: 10px;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+footer .fas {
+  margin: 0;
+}
