@@ -36,10 +36,7 @@ const HOBBIES = [
     "My interest in hacking or penetration testing was influenced from the Cyberpunk works I immersed myself in like Ghost in the Shell and William Gibson's Sprawl trilogy in which their protagonists project their minds into cyberspace to break into computer systems a la Tron.<br><br> \
     \
     As I played around with Linux, my discovery of pentesting distros like Kali Linux and Parrot OS inspired to want to study hacking for real. \
-    \
-    Among the games I play are hacking simulators like Uplink, Hacknet and NITE Team 4 - the latter two being more grounded in real-life hacking techniques.<br><br> \
-    \
-    <i>(Please don't arrest me)</i>"
+    </i>"
   ),
   new hobby(
     "fa-solid fa-4x fa-photo-film",
@@ -65,7 +62,7 @@ const HOBBIES = [
     "I used to own a Sony Playstation, Nintendo Gamecube and Xbox 360.<br> \
     But now I own a Nintendo Wii and a disassembled slim Playstation 2 (Don't ask). <br>But I mostly play games on my PC and I strictly prefer retro and indie games.<br><br> \
     \
-    My favorites include <a href='https://store.steampowered.com/app/70/HalfLife/'>Half-Life</a>, <a href='https://store.steampowered.com/app/19830/Tom_Clancys_Rainbow_Six_3_Gold/'>Rainbow Six 3: Raven Shield</a>, <a href='https://www.gog.com/game/deus_ex'>Deus Ex</a>, <a href='http://www.openarena.ws/'>OpenArena</a>, <a href='https://xonotic.org/'>Xonotic</a>, <a href='https://www.moddb.com/mods/brutal-doom'>Brutal Doom</a>, <a href='https://www.gog.com/game/system_shock_2'>System Shock 2</a>, <a href='https://www.minecraft.net/'>Minecraft</a>,<a href='http://waifubartending.com/'>VA-11 Hall-A: Cyberpunk Bartender Action</a>, <a href='https://www.hacknet-os.com/'>Hacknet</a> and <a href='https://www.niteteam4.com/'>NITE Team 4</a>"
+    My favorites include <a href='https://store.steampowered.com/app/70/HalfLife/'>Half-Life</a>, <a href='https://store.steampowered.com/app/19830/Tom_Clancys_Rainbow_Six_3_Gold/'>Rainbow Six 3: Raven Shield</a>, <a href='https://www.gog.com/game/deus_ex'>Deus Ex</a>, <a href='http://www.openarena.ws/'>OpenArena</a>, <a href='https://xonotic.org/'>Xonotic</a>, <a href='https://www.moddb.com/mods/brutal-doom'>Brutal Doom</a>, <a href='https://www.gog.com/game/system_shock_2'>System Shock 2</a>, <a href='https://www.minecraft.net/'>Minecraft</a> and <a href='http://waifubartending.com/'>VA-11 Hall-A: Cyberpunk Bartender Action</a>"
   )
 ];
 
