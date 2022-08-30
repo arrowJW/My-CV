@@ -197,7 +197,7 @@ header img {
 
 /* Media Queries for large screens
 -----------------------------------*/
-@media (min-width: 869px) {
+@media (min-width: 926px) {
   .content-wrap {
     margin: 2rem auto;
   }
