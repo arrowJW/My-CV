@@ -46,7 +46,7 @@ const JOBS = [
     "Chandlers Ford",
     "July",
     "October 2016",
-    "Worked with a small teamin B&Q's advertisement department. Self-trained to use Cinema4D in order to model realistic furniture and other wares to promote B&Q's sales.",
+    "Worked with a small team in B&Q's advertisement department. Self-trained to use Cinema4D in order to model realistic furniture and other wares to promote B&Q's sales.",
     ["Created realistical scenes and models with cinematic renders, using Cinema4D.",
     "Occupied spare time by practising Cinema4D with personal belongings used as reference for modelling",
     "Used SiteImprove to optimise website by shrinking image sizes and correcting grammar errors."]
