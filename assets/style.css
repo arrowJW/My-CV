@@ -62,7 +62,7 @@ a:hover {
   background: white;
   color: #263238;
 }
-.hide {
+.collapsed {
   display: none;
 }
 .content-wrap {
@@ -387,7 +387,7 @@ a[href^="#contact"]:hover {
 } */
 
 #career .entry:hover {
-  background: #ffd866;
+  background: rgba(255,216,102,0.8);
 }
 
 #career h2 {
@@ -408,7 +408,7 @@ h3 ~ p {
 }
 
 #education .entry:hover {
-  background: #a9dc76;
+  background: rgba(169,220,118,0.8);
 }
 
 #education h2 {
@@ -426,7 +426,7 @@ h3 ~ p {
 }
 
 #hobbies .entry:hover {
-  background: #78dce8;
+  background: rgba(120,220,232,0.8);
 }
 
 #hobbies h2 {
@@ -452,7 +452,7 @@ h3 ~ p {
 
 #contact a:hover {
   color: #263238;
-  background: #ab9df2;
+  background: rgba(171,157,242,1);
 }
 
 #contact a[href^="#top"]{
