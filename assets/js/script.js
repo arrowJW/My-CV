@@ -7,7 +7,14 @@ import NAVBAR from "./database/navbar.js";
 
 function open(i) {
   i.target.parentElement.children[1].classList.toggle("collapsed");
+  i.target.children[1].classList.toggle("fa-caret-down");
+  i.target.children[1].classList.toggle("fa-caret-up");
 };
+
+// Figuring out how to add and remove up and down arrow icons
+// i.target.parentElement.classList.toggle("fas"); WORKS!
+// Creat a new i class and append it to the h2 header?
+// Can I remove elements
 
 const body = document.querySelector("body");
 const main = document.querySelector("main");
@@ -90,7 +97,7 @@ skillsSection.setAttribute("id", "skills");
 skillsSection.classList.add("content-wrap", "clearfix");
 
 const skillsHeading = document.createElement("h2");
-skillsHeading.innerHTML = `<i class="fas fa-star"></i>&nbsp;Skills&nbsp;(Click to open/close)`;
+skillsHeading.innerHTML = `<i class="fas fa-star"></i>&nbsp;Skills<i class="fa-solid fa-caret-down"></i>`;
 skillsSection.appendChild(skillsHeading);
 
 const skillList = document.createElement("div");
@@ -136,7 +143,7 @@ careerSection.setAttribute("id", "career");
 careerSection.classList.add("content-wrap", "clearfix");
 
 const careerHeading = document.createElement("h2");
-careerHeading.innerHTML = `<i class="fas fa-briefcase"></i>&nbsp;Career&nbsp;(Click to open/close)`;
+careerHeading.innerHTML = `<i class="fas fa-briefcase"></i>&nbsp;Career<i class="fa-solid fa-caret-down"></i>`;
 careerSection.appendChild(careerHeading);
 
 const careerList = document.createElement("div");
@@ -185,7 +192,7 @@ educateSection.setAttribute("id", "education");
 educateSection.classList.add("content-wrap", "clearfix");
 
 const educateHeading = document.createElement("h2");
-educateHeading.innerHTML = `<i class="fas fa-graduation-cap"></i>&nbsp;Qualifications&nbsp;(Click to open/close)`;
+educateHeading.innerHTML = `<i class="fas fa-graduation-cap"></i>&nbsp;Qualifications<i class="fa-solid fa-caret-down"></i>`;
 educateSection.appendChild(educateHeading);
 
 const educateList = document.createElement("div");
@@ -219,7 +226,7 @@ hobbySection.setAttribute("id", "hobbies");
 hobbySection.classList.add("content-wrap", "clearfix");
 
 const hobbyHeading = document.createElement("h2");
-hobbyHeading.innerHTML = `<i class="fas fa-heart"></i>&nbsp;Interests&nbsp;(Click to open/close)`;
+hobbyHeading.innerHTML = `<i class="fas fa-heart"></i>&nbsp;Interests<i class="fa-solid fa-caret-down"></i>`;
 hobbySection.appendChild(hobbyHeading);
 
 const hobbyList = document.createElement("div");
