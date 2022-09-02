@@ -284,6 +284,11 @@ header h2 {
 
 /* Navigation
 -----------------------------*/
+
+h2 i:nth-of-type(2) {
+  margin-left: 1rem;
+}
+
 nav {
   text-align: center;
   font-size: 0;
@@ -346,6 +351,11 @@ a[href^="#contact"]:hover {
   background: #fc9867;
 }
 
+#skills h2:hover {
+  cursor: pointer;
+  background: rgba(252,152,103,0.5);
+}
+
 #skills h3 {
   color: #263238;
   background: #fc9867;
@@ -396,6 +406,11 @@ a[href^="#contact"]:hover {
   background: #ffd866;
 }
 
+#career h2:hover {
+  cursor: pointer;
+  background: rgba(255,216,102,0.5);
+}
+
 h3 ~ p {
   margin: 0;
 }
@@ -417,6 +432,11 @@ h3 ~ p {
   background: #a9dc76;
 }
 
+#education h2:hover {
+  cursor: pointer;
+  background: rgba(169,220,118,0.5);
+}
+
 
 /* Hobbies
 ------------------------------*/
@@ -435,7 +455,10 @@ h3 ~ p {
   background: #78dce8;
 }
 
-
+#hobbies h2:hover {
+  cursor: pointer;
+  background: rgba(120,220,232,0.5);
+}
 
 /* Footer
 ------------------------*/
