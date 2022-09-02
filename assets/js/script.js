@@ -5,6 +5,10 @@ import HOBBIES from "./database/hobbies.js";
 import CONTACTS from "./database/contact.js";
 import NAVBAR from "./database/navbar.js";
 
+function open(i) {
+  i.target.parentElement.children[1].classList.toggle("collapsed");
+};
+
 const body = document.querySelector("body");
 const main = document.querySelector("main");
 const header = document.querySelector("header");
@@ -86,19 +90,18 @@ skillsSection.setAttribute("id", "skills");
 skillsSection.classList.add("content-wrap", "clearfix");
 
 const skillsHeading = document.createElement("h2");
-skillsHeading.innerHTML = `<i class="fas fa-star"></i>&nbsp;Skills`;
+skillsHeading.innerHTML = `<i class="fas fa-star"></i>&nbsp;Skills&nbsp;(Click to open/close)`;
 skillsSection.appendChild(skillsHeading);
 
-// Allow the user to open and close the Skills table by clicking the
-// skills heading
-/// So for this works, now I have to make sure it actually turns visible and invisible
-skillsHeading.addEventListener("click", () => {
-  skillTable.classList.toggle("visible");
-});
+const skillList = document.createElement("div");
+skillList.classList.add("collapsed");
+
 
 const skillTable = document.createElement("div");
 skillTable.classList.add("table");
-skillsSection.appendChild(skillTable);
+skillList.appendChild(skillTable);
+
+skillsSection.appendChild(skillList);
 main.appendChild(skillsSection);
 
 
@@ -125,6 +128,7 @@ for (let i = 0; i < SKILLS.length; i++) {
   skillTable.appendChild(entry);
 };
 
+skillsHeading.addEventListener("click", open);
 
 // Create the Career section
 const careerSection = document.createElement("section");
@@ -132,11 +136,11 @@ careerSection.setAttribute("id", "career");
 careerSection.classList.add("content-wrap", "clearfix");
 
 const careerHeading = document.createElement("h2");
-careerHeading.innerHTML = `<i class="fas fa-briefcase"></i>&nbsp;Career`;
+careerHeading.innerHTML = `<i class="fas fa-briefcase"></i>&nbsp;Career&nbsp;(Click to open/close)`;
 careerSection.appendChild(careerHeading);
 
 const careerList = document.createElement("div");
-careerList.classList.add("hide");
+careerList.classList.add("collapsed");
 careerSection.appendChild(careerList);
 main.appendChild(careerSection);
 
@@ -170,14 +174,10 @@ for (let i = 0; i < JOBS.length; i++) {
   entry.innerHTML = jobContentNarrow + jobContentWide;
   careerList.appendChild(entry);
 };
-function toggle(i) {
-  i.classList.toggle("hide");
-};
+
 
 // Open or close Careers list
-careerHeading.addEventListener("click", toggle(careerList));
-
-
+careerHeading.addEventListener("click", open);
 
 // Create the Education section
 const educateSection = document.createElement("section");
@@ -185,9 +185,13 @@ educateSection.setAttribute("id", "education");
 educateSection.classList.add("content-wrap", "clearfix");
 
 const educateHeading = document.createElement("h2");
-educateHeading.innerHTML = `<i class="fas fa-graduation-cap"></i>&nbsp;Qualifications`;
-
+educateHeading.innerHTML = `<i class="fas fa-graduation-cap"></i>&nbsp;Qualifications&nbsp;(Click to open/close)`;
 educateSection.appendChild(educateHeading);
+
+const educateList = document.createElement("div");
+educateList.classList.add("collapsed");
+educateSection.appendChild(educateList);
+
 main.appendChild(educateSection);
 
 // Populate the Education section
@@ -204,8 +208,10 @@ for (let i = 0; i < SCHOOLS.length; i++) {
           `;
 
   entry.innerHTML = schoolContent;
-  educateSection.appendChild(entry);
+  educateList.appendChild(entry);
 };
+
+educateHeading.addEventListener("click", open);
 
 // Create the Hobbies section
 const hobbySection = document.createElement("section");
@@ -213,8 +219,13 @@ hobbySection.setAttribute("id", "hobbies");
 hobbySection.classList.add("content-wrap", "clearfix");
 
 const hobbyHeading = document.createElement("h2");
-hobbyHeading.innerHTML = `<i class="fas fa-heart"></i>&nbsp;Interests`;
+hobbyHeading.innerHTML = `<i class="fas fa-heart"></i>&nbsp;Interests&nbsp;(Click to open/close)`;
 hobbySection.appendChild(hobbyHeading);
+
+const hobbyList = document.createElement("div");
+hobbyList.classList.add("collapsed");
+hobbySection.appendChild(hobbyList);
+
 main.appendChild(hobbySection);
 
 // Populate the Hobbies section
@@ -232,9 +243,10 @@ for (let i = 0; i < HOBBIES.length; i++) {
     </div>
   `;
   entry.innerHTML = hobbyContent;
-  hobbySection.appendChild(entry);
+  hobbyList.appendChild(entry);
 };
 
+hobbyHeading.addEventListener("click", open);
 
 // Create the footer
 const footer = document.createElement("footer");
