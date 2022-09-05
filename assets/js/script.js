@@ -56,7 +56,7 @@ const greeting = {
   photo: "assets/media/image/portrait.png",
   alt: "Photo of James Arrow",
   title: "Multimedia + Web Designer",
-  description: "I'm a digital animator, graphic and web designer with a Masters' degree in Digital Media on my belt. I began with studying animation and digital media, having become proficient in Adobe Creative Suite and have, recently, begun learning web design and programming.<br><br> I am flexible and eager to learn new skills, passionate about computer technology and welcoming of a challenge."
+  description: "I'm a digital animator, graphic and web designer with a Masters' degree in Digital Media under my belt. I began with studying animation and digital media, having become proficient in Adobe Creative Suite and have recently begun learning web design and programming.<br><br> I am flexible and eager to learn new skills, passionate about computer technology and welcoming of a challenge."
 };
 
 const profileHead = document.createElement("div");
