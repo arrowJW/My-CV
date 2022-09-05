@@ -1,0 +1,590 @@
+/* Monokai Color Palette
+red:    #ff6188;
+orange: #fc9867;
+yellow: #ffd866;
+green:  #a9dc76;
+blue:   #78dce8;
+purple: #ab9df2;
+*/
+
+
+/* Global Styles
+-------------------------------*/
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('../fonts/UbuntuMono-R.ttf') format('truetype'),
+  url('../fonts/UbuntuMono-B.ttf') format('truetype'),
+  url('../fonts/UbuntuMono-BI.ttf') format('truetype'),
+  url('../fonts/UbuntuMono-RI.ttf') format('truetype');
+}
+
+html {
+  font-family: 'Ubuntu Mono', monospace;
+  box-sizing: border-box;
+  /* apply a natural box layout model to all elements,
+  but allowing components to change */
+
+  background: #263238;
+  /* background: #f5f3f4;*/
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-top: 0;
+  padding: 5px 0 5px 10px;
+}
+h3 {
+  margin: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
+  background: white;
+  color: #263238;
+}
+.collapsed {
+  display: none;
+}
+.content-wrap {
+  max-width: 1000px;
+  overflow: auto;
+  border: solid 0.2rem;
+  padding: 0 1rem;
+}
+
+.table {
+  display: flex;
+  width: 100%;
+}
+
+.entry {
+  padding: 10px 0 10px 20px;
+  margin-bottom: 10px;
+}
+
+.entry:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.entry:hover {
+  color: #263238;
+  font-weight: bold;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.description {
+  margin-bottom: 25px;
+}
+.description p:first-of-type {
+  margin-top: 0; /* Keeps the top of the job descriptions in line with the narrow column */
+}
+.description ul li {
+  margin: 10px 0;
+}
+
+.close {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem;
+  border: solid 2px;
+  text-align: center;
+}
+
+.close:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* Media Queries for phones (256px)
+-----------------------------------*/
+
+@media (min-width: 256px) {
+  header {
+    text-align: center;
+  }
+
+  header .socialMedia {
+    text-align: center;
+    margin: 1rem 0rem;
+  }
+
+header img {
+    width: 50%;
+    margin: 0px 0px 20px 0px;
+  }
+  .nav-min {
+    display: block;
+  }
+  .nav-max {
+    display: none;
+  }
+  .col-narrow {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .col-narrow p {
+    margin: 2px 0;
+  }
+  .col-wide {
+    width: 100%;
+  }
+  .hobby-narrow {
+    margin-bottom: 0.7rem;
+  }
+  nav a {
+   background: #263238;
+   width: 20%;
+   padding: 10px 0;
+   display: inline-block;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: 700;
+   font-size: 16px;
+   color: white;
+  }
+  .col-school {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+/* Media Queries for medium screens (256px)
+-----------------------------------*/
+@media (min-width: 660px) {
+  .content-wrap {
+    margin: 0.5rem auto;
+    border: solid 0.15rem;
+  }
+  header {
+    text-align: left;
+  }
+  .hobby-narrow {
+    width: 15%;
+    min-height: 90px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    float: left;
+  }
+  .hobby-wide {
+    width: 85%;
+    min-height: 90px;
+    padding: 0 20px 10px 20px;
+    float: left;
+  }
+  .col-narrow {
+    width: 30%;
+    min-height: 90px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    float: left;
+  }
+  .col-wide {
+    width: 70%;
+    min-height: 90px;
+    padding: 0 20px 10px 20px;
+    float: left;
+  }
+  #education .entry {
+    width: 50%;
+    display: inline-block;
+  }
+}
+
+/* Media Queries for large screens
+-----------------------------------*/
+@media (min-width: 926px) {
+  .content-wrap {
+    margin: 1rem auto;
+  }
+
+  header .socialMedia {
+    text-align: left;
+    margin: 1rem 0rem;
+  }
+
+  .header-top {
+    margin-top: 4rem;
+  }
+  .nav-min {
+    display: none;
+  }
+  .nav-max {
+    position: sticky;
+    display: block;
+  }
+  nav a {
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+  }
+  header {
+    background: #263238;
+    box-shadow: 0px 0px 10px 1px #ff6188;
+  }
+  #skills {
+    background: #263238;
+    box-shadow: 0px 0px 10px 1px #fc9867;
+  }
+  #career {
+    background: #263238;
+    box-shadow: 0px 0px 10px 1px #ffd866;
+  }
+  #education {
+    background: #263238;
+    box-shadow: 0px 0px 10px 1px #a9dc76;
+  }
+  #hobbies {
+    background: #263238;
+    box-shadow: 0px 0px 10px 1px #78dce8;
+  }
+  #contact {
+    background: #263238;
+    box-shadow: 0px 0px 10px 1px #ab9df2;
+  }
+}
+
+/* Header
+-------------------------------*/
+#top {
+  margin-top: 1rem;
+}
+header {
+  color: #ff6188;
+  border: #ff6188;
+  margin-top: 4em;
+}
+
+header h1, header h2 {
+  text-transform: uppercase;
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+}
+
+header p {
+  font-weight: 600;
+}
+
+header h1 {
+  color: #263238;
+  background: #ff6188;
+  padding-left: 1rem;
+}
+
+header h2 {
+  border-bottom: dashed;
+  padding-bottom: 0.5rem;
+}
+
+header .socialMedia a {
+  padding: 0.2rem 1rem;
+}
+
+header .socialMedia a:hover {
+  color: #263238;
+  background: #ff6188;
+}
+
+header .socialMedia a i {
+  padding-right: 1rem;
+}
+
+/* Navigation
+-----------------------------*/
+
+h2 i:nth-of-type(2) {
+  margin-left: 1rem;
+}
+
+nav {
+  text-align: center;
+  font-size: 0;
+}
+
+a[href^="#skills"]:hover {
+  background: #fc9867;
+  color: #263238;
+}
+
+a[href^="#career"]:hover {
+  background: #ffd866;
+  color: #263238;
+}
+
+a[href^="#education"]:hover {
+  background: #a9dc76;
+  color: #263238;
+}
+
+a[href^="#hobbies"]:hover {
+  background: #78dce8;
+  color: #263238;
+}
+
+a[href^="#contact"]:hover {
+  background: #ab9df2;
+  color: #263238;
+}
+
+.nav-max {
+  z-index: 200;
+  top: 0;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  color: #939ba4;
+  width: 100%;
+  margin: 0rem auto;
+}
+
+.nav-min {
+  z-index: 200;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  color: #ff6188;
+  width: 100%;
+  margin: 0rem auto;
+}
+
+/* Key Skills stylesheet
+-------------------------------*/
+#skills {
+  color: #fc9867;
+  position: relative;
+}
+
+#skills h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #fc9867;
+}
+
+#skills .close:hover {
+  color: #263238;
+  background: #fc9867;
+}
+
+#skills h2:hover {
+  cursor: pointer;
+  background: rgba(252,152,103,0.5);
+}
+
+#skills h3 {
+  color: #263238;
+  background: #fc9867;
+  text-transform: uppercase;
+  padding: 5px 0 0 10px;
+  font-size: 0.8rem;
+  line-height: 2em;
+  min-height: 40px;
+}
+
+#skills ul {
+  width: 100%;
+  margin: 20px 0 20px -20px;
+}
+
+#skills  li{
+  width: 100%;
+  list-style-type: none;
+  margin: 10px auto;
+}
+
+.col-skill {
+  display: inline-block;
+  border: solid;
+  justify-content: center;
+  margin: 0px 5px 15px 5px;
+  width: 25%;
+}
+
+/* Work Experience stylesheet
+-------------------------------*/
+#career {
+  color: #ffd866;
+  position: relative;
+}
+
+/* #career .entry:first-of-type {
+  Block level first entry and the other entries will be inline-block
+} */
+
+#career .entry:hover {
+  background: rgba(255,216,102,0.8);
+}
+
+#career .close:hover {
+  color: #263238;
+  background: #ffd866;
+}
+
+#career h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #ffd866;
+}
+
+#career h2:hover {
+  cursor: pointer;
+  background: rgba(255,216,102,0.5);
+}
+
+h3 ~ p {
+  margin: 0;
+}
+
+/* Education stylesheet
+-------------------------------*/
+#education {
+  color:#a9dc76;
+  position: relative;
+}
+
+#education .entry:hover {
+  background: rgba(169,220,118,0.8);
+}
+
+#education h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #a9dc76;
+}
+
+#education h2:hover {
+  cursor: pointer;
+  background: rgba(169,220,118,0.5);
+}
+
+#education .close:hover {
+  color: #263238;
+  background: #a9dc76;
+}
+
+
+/* Hobbies
+------------------------------*/
+#hobbies {
+  color: #78dce8;
+  position: relative;
+}
+
+#hobbies .entry:hover {
+  background: rgba(120,220,232,0.8);
+}
+
+#hobbies h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #78dce8;
+}
+
+#hobbies h2:hover {
+  cursor: pointer;
+  background: rgba(120,220,232,0.5);
+}
+
+#hobbies .close:hover {
+  color: #263238;
+  background: #78dce8;
+}
+
+/* Footer
+------------------------*/
+#contact {
+  text-align: center;
+  color: #ab9df2;
+  position: relative;
+  margin-bottom: 4em;
+}
+
+#contact h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #ab9df2;
+}
+
+#contact a {
+  color: #ab9df2;
+}
+
+#contact a:hover {
+  color: #263238;
+  background: rgba(171,157,242,1);
+}
+
+#contact a[href^="#top"]{
+  margin-bottom: 1rem;
+}
+
+#contact a[href^="#top"]:hover {
+  background: #ff6188;
+  color: #263238;
+}
+
+#contact .socialMedia a {
+  text-align: center;
+  padding: 1rem 2rem;
+  margin: 0 1rem;
+}
+
+#contact h2 {
+  padding: 5px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+}
+
+.contact-me {
+  font-size: 1.5rem;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 45px;
+  font-weight: bolder;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0px 5px;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+#contact a {
+  padding: 10px;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+footer .fas {
+  margin: 0;
+}
