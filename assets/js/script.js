@@ -5,50 +5,9 @@ import HOBBIES from "./database/hobbies.js";
 import CONTACTS from "./database/contact.js";
 import NAVBAR from "./database/navbar.js";
 
-// function open(i) {
-//   i.target.parentElement.children[1].classList.toggle("collapsed");
-//   i.target.children[1].classList.toggle("fa-caret-down");
-//   i.target.children[1].classList.toggle("fa-caret-up");
-//
-//   // target = h2
-//   // parentElement = section
-// };
-
 const body = document.querySelector("body");
 const main = document.querySelector("main");
 const header = document.querySelector("header");
-
-// Create the top navbar
-const topNav = document.createElement("nav");
-topNav.setAttribute("role", "navigation");
-const topNavList = document.createElement("div");
-topNavList.classList.add("nav-max");
-
-// Populate the navbar
-for (let i = 0; i < NAVBAR.length; i++) {
-  let itemLink = document.createElement("a");
-  itemLink.href = `${NAVBAR[i].link}`;
-  itemLink.innerHTML = `<i class="fas ${NAVBAR[i].icon}"></i>&nbsp;${NAVBAR[i].title}`;
-  topNavList.append(itemLink);
-}
-topNav.appendChild(topNavList);
-main.appendChild(topNav);
-
-// Create the bottom navbar
-const bottomNav = document.createElement("nav");
-bottomNav.setAttribute("role", "navigation");
-const bottomNavList = document.createElement("div");
-bottomNavList.classList.add("nav-min");
-
-// Populate the navbar
-for (let i = 0; i < NAVBAR.length; i++) {
-  let itemLink = document.createElement("a");
-  itemLink.href = `${NAVBAR[i].link}`;
-  itemLink.innerHTML = `<i aria-hidden="true" class="fas ${NAVBAR[i].icon} fa-2x"></i><span class="sr-only">${NAVBAR[i].title}</span>`;
-  bottomNavList.append(itemLink);
-}
-bottomNav.appendChild(bottomNavList);
-main.appendChild(bottomNav);
 
 // Create the Header
 const greeting = {
@@ -60,13 +19,21 @@ const greeting = {
 };
 
 const profileHead = document.createElement("div");
-profileHead.setAttribute("id", "top");
-// profileHead.classList.add("content-wrap", "clearfix");
+profileHead.classList.add("col-narrow");
 
 const profileImg = document.createElement("img");
-profileImg.classList.add("col-narrow");
 profileImg.src = greeting.photo;
 profileImg.alt = greeting.alt;
+
+profileHead.appendChild(profileImg);
+
+const cvButton = document.createElement("a");
+cvButton.href="assets/media/cv.pdf";
+cvButton.setAttribute("download", "James Arrow's CV");
+cvButton.innerHTML = "Download CV";
+cvButton.classList.add("cv-button");
+
+profileHead.appendChild(cvButton);
 
 const profileBio = document.createElement("div");
 profileBio.classList.add("col-wide");
@@ -80,30 +47,42 @@ profileTitle.innerHTML = greeting.title;
 const profileDesc = document.createElement("p");
 profileDesc.innerHTML = greeting.description;
 
+const profileContacts = document.createElement("div");
+profileContacts.classList.add("contacts");
+
+const email = document.createElement("a");
+email.href = `${CONTACTS[0].link}`;
+email.innerHTML = `<i class="${CONTACTS[0].iconS}"></i>meetme.jw_arrow@erine.email`;
+
+const mobile = document.createElement("a");
+mobile.href = `${CONTACTS[1].link}`;
+mobile.innerHTML = `<i class="${CONTACTS[1].iconS}"></i>07710 423 543`;
+
+profileContacts.appendChild(email);
+profileContacts.appendChild(mobile);
+
 profileBio.appendChild(profileName);
 profileBio.appendChild(profileTitle);
 profileBio.appendChild(profileDesc);
+profileBio.appendChild(profileContacts);
 
-// Create top social media list
 const contactListTop = document.createElement("div");
 contactListTop.classList.add("socialMedia");
-for (let i=0; i<CONTACTS.length;i++) {
+for (let i=2; i<CONTACTS.length;i++) {
   let contactItem = document.createElement("a");
   contactItem.href = `${CONTACTS[i].link}`;
   contactItem.innerHTML = `<i class="${CONTACTS[i].iconS}"></i>${CONTACTS[i].title}`;
   contactListTop.appendChild(contactItem);
 };
-
 profileBio.appendChild(contactListTop);
 
-profileHead.appendChild(profileImg);
-profileHead.appendChild(profileBio);
 header.appendChild(profileHead);
+header.appendChild(profileBio);
 
 // Create the Skills section
 const skillsSection = document.createElement("section");
 skillsSection.setAttribute("id", "skills");
-skillsSection.classList.add("content-wrap", "clearfix");
+skillsSection.classList.add("content-wrap");
 
 const skillsHeading = document.createElement("h2");
 skillsHeading.innerHTML = `<i class="fas fa-star"></i>&nbsp;Skills<i class="fa-solid fa-caret-down"></i>`;
@@ -111,11 +90,6 @@ skillsSection.appendChild(skillsHeading);
 
 const skillList = document.createElement("div");
 skillList.classList.add("collapsed");
-
-
-const skillTable = document.createElement("div");
-skillTable.classList.add("table");
-skillList.appendChild(skillTable);
 
 skillsSection.appendChild(skillList);
 main.appendChild(skillsSection);
@@ -140,7 +114,7 @@ for (let i = 0; i < SKILLS.length; i++) {
   `;
   entry.appendChild(skillHead);
   entry.innerHTML += skillType;
-  skillTable.appendChild(entry);
+  skillList.appendChild(entry);
 };
 
 const skillsClose = document.createElement("div");
@@ -152,7 +126,7 @@ skillList.appendChild(skillsClose);
 // Create the Career section
 const careerSection = document.createElement("section");
 careerSection.setAttribute("id", "career");
-careerSection.classList.add("content-wrap", "clearfix");
+careerSection.classList.add("content-wrap");
 
 const careerHeading = document.createElement("h2");
 careerHeading.innerHTML = `<i class="fas fa-briefcase"></i>&nbsp;Career<i class="fa-solid fa-caret-down"></i>`;
@@ -203,7 +177,7 @@ careerList.appendChild(careerClose);
 // Create the Education section
 const educateSection = document.createElement("section");
 educateSection.setAttribute("id", "education");
-educateSection.classList.add("content-wrap", "clearfix");
+educateSection.classList.add("content-wrap");
 
 const educateHeading = document.createElement("h2");
 educateHeading.innerHTML = `<i class="fas fa-graduation-cap"></i>&nbsp;Qualifications<i class="fa-solid fa-caret-down"></i>`;
@@ -221,11 +195,9 @@ for (let i = 0; i < SCHOOLS.length; i++) {
   entry.classList.add("entry");
 
   const schoolContent = `
-          <div class="col-school">
             <h3>${SCHOOLS[i].course}</h3>
             <p class="uppercase">${SCHOOLS[i].degree}, ${SCHOOLS[i].qualification}</p>
             <p>${SCHOOLS[i].location}, ${SCHOOLS[i].date}</p>
-          </div>
           `;
 
   entry.innerHTML = schoolContent;
@@ -240,7 +212,7 @@ educateList.appendChild(educateClose);
 // Create the Hobbies section
 const hobbySection = document.createElement("section");
 hobbySection.setAttribute("id", "hobbies");
-hobbySection.classList.add("content-wrap", "clearfix");
+hobbySection.classList.add("content-wrap");
 
 const hobbyHeading = document.createElement("h2");
 hobbyHeading.innerHTML = `<i class="fas fa-heart"></i>&nbsp;Interests<i class="fa-solid fa-caret-down"></i>`;
@@ -258,17 +230,46 @@ for (let i = 0; i < HOBBIES.length; i++) {
   entry.classList.add("entry");
 
   const hobbyContent = `
-    <div class="hobby-narrow">
+    <div>
       <i class="${HOBBIES[i].icon}"></i>
-    </div>
-    <div class="hobby-wide">
-      <h3>${HOBBIES[i].title}</h3>
-      <p>${HOBBIES[i].summary}</p>
+      <p>${HOBBIES[i].title}</p>
     </div>
   `;
   entry.innerHTML = hobbyContent;
   hobbyList.appendChild(entry);
 };
+
+// Create the top navbar
+const topNav = document.createElement("nav");
+topNav.setAttribute("role", "navigation");
+const topNavList = document.createElement("div");
+topNavList.classList.add("nav-max");
+
+// Populate the navbar
+for (let i = 0; i < NAVBAR.length; i++) {
+  let itemLink = document.createElement("a");
+  itemLink.href = `${NAVBAR[i].link}`;
+  itemLink.innerHTML = `<i class="fas ${NAVBAR[i].icon}"></i>&nbsp;${NAVBAR[i].title}`;
+  topNavList.append(itemLink);
+}
+topNav.appendChild(topNavList);
+main.appendChild(topNav);
+
+// Create the bottom navbar
+const bottomNav = document.createElement("nav");
+bottomNav.setAttribute("role", "navigation");
+const bottomNavList = document.createElement("div");
+bottomNavList.classList.add("nav-min");
+
+// Populate the navbar
+for (let i = 0; i < NAVBAR.length; i++) {
+  let itemLink = document.createElement("a");
+  itemLink.href = `${NAVBAR[i].link}`;
+  itemLink.innerHTML = `<i aria-hidden="true" class="fas ${NAVBAR[i].icon} fa-2x"></i><span class="sr-only">${NAVBAR[i].title}</span>`;
+  bottomNavList.append(itemLink);
+}
+bottomNav.appendChild(bottomNavList);
+main.appendChild(bottomNav);
 
 const hobbyClose = document.createElement("div");
 hobbyClose.classList.add("close");
@@ -277,24 +278,28 @@ hobbyList.appendChild(hobbyClose);
 
 function openSkills() {
   skillsHeading.parentElement.children[1].classList.toggle("collapsed");
+  skillsHeading.parentElement.children[1].classList.toggle("list");
   skillsHeading.children[1].classList.toggle("fa-caret-down");
   skillsHeading.children[1].classList.toggle("fa-caret-up");
 };
 
 function openCareer() {
   careerHeading.parentElement.children[1].classList.toggle("collapsed");
+  careerHeading.parentElement.children[1].classList.toggle("list");
   careerHeading.children[1].classList.toggle("fa-caret-down");
   careerHeading.children[1].classList.toggle("fa-caret-up");
 };
 
 function openEducate() {
   educateHeading.parentElement.children[1].classList.toggle("collapsed");
+  educateHeading.parentElement.children[1].classList.toggle("list");
   educateHeading.children[1].classList.toggle("fa-caret-down");
   educateHeading.children[1].classList.toggle("fa-caret-up");
 };
 
 function openHobbies() {
   hobbyHeading.parentElement.children[1].classList.toggle("collapsed");
+  hobbyHeading.parentElement.children[1].classList.toggle("list");
   hobbyHeading.children[1].classList.toggle("fa-caret-down");
   hobbyHeading.children[1].classList.toggle("fa-caret-up");
 };
@@ -326,16 +331,30 @@ hobbyLink[1].addEventListener("click", openHobbies);
 
 // Create the footer
 const footer = document.createElement("footer");
-footer.classList.add("content-wrap", "clearfix");
+footer.classList.add("content-wrap");
 footer.setAttribute("role", "contact");
 footer.setAttribute("id", "contact");
 
 const contactHeading = document.createElement("h2");
 contactHeading.innerHTML = `<i class="fa-sharp fa-solid fa-pencil"></i>&nbsp;Let's Get in Touch!`;
 
+const footerContacts = document.createElement("div");
+footerContacts.classList.add("contacts");
+
+const email2 = document.createElement("a");
+email2.href = `${CONTACTS[0].link}`;
+email2.innerHTML = `<i class="${CONTACTS[0].iconS}"></i>meetme.jw_arrow@erine.email`;
+
+const mobile2 = document.createElement("a");
+mobile2.href = `${CONTACTS[1].link}`;
+mobile2.innerHTML = `<i class="${CONTACTS[1].iconS}"></i>07710 423 543`;
+
+footerContacts.appendChild(email2);
+footerContacts.appendChild(mobile2);
+
 const contactListBottom = document.createElement("div");
 contactListBottom.classList.add("socialMedia");
-for (let i=0; i<CONTACTS.length;i++) {
+for (let i=2; i<CONTACTS.length;i++) {
   let contactItem = document.createElement("a");
   contactItem.href = `${CONTACTS[i].link}`;
   contactItem.innerHTML = `<i class="${CONTACTS[i].iconL}">`;
@@ -351,6 +370,7 @@ backToTop.href = "#top";
 backToTop.innerHTML = `<i class="fas fa-arrow-circle-up"></i>&nbsp;Back to Top`
 
 footer.appendChild(contactHeading);
+footer.appendChild(footerContacts);
 footer.appendChild(contactListBottom);
 footer.appendChild(copyright);
 footer.appendChild(backToTop);

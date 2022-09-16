@@ -40,7 +40,7 @@ const HOBBIES = [
   ),
   new hobby(
     "fa-solid fa-4x fa-photo-film",
-    "Anime&nbsp;/&nbsp;Manga (and drawing)",
+    "Anime&nbsp;/&nbsp;Manga",
     "Like many people in my generation, I was introduced to Anime and Manga by the likes of <a href='https://wikiless.org/wiki/Pok%C3%A9mon_(TV_series)' target='_blank'>Pokèmon</a> and <a href='https://wikiless.org/wiki/Yu-Gi-Oh!' target='_blank'>Yu-Gi-Oh!</a> (which proved to me to be an <a href='https://wikiless.org/wiki/Yu-Gi-Oh!_Trading_Card_Game' target='_blank'>expensive hobby!</a>).<br><br> \
     \
     Ever since Secondary School, I nurtured a hobby of drawing my own manga characters and used the manga I bought for references. \

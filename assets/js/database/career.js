@@ -37,7 +37,7 @@ const JOBS = [
     "Southampton",
     "January 2020",
     "(One Month Contract)",
-    "Contracted to edit live footage and create new graphics and animation to produce a series of video's for the Global E-Commerce Experts' business expansion program.",
+    "Contracted to edit live footage and create new graphics and animation to produce a series of videos for the Global E-Commerce Experts' business expansion program.",
     []
   ),
   new Job(

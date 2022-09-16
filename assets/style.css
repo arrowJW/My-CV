@@ -10,12 +10,13 @@ purple: #ab9df2;
 
 /* Global Styles
 -------------------------------*/
+
 @font-face {
-  font-family: 'Ubuntu Mono';
-  src: url('../fonts/UbuntuMono-R.ttf') format('truetype'),
-  url('../fonts/UbuntuMono-B.ttf') format('truetype'),
-  url('../fonts/UbuntuMono-BI.ttf') format('truetype'),
-  url('../fonts/UbuntuMono-RI.ttf') format('truetype');
+  font-family: "Ubuntu Mono";
+  src: url('fonts/UbuntuMono-R.ttf'),
+  url('fonts/UbuntuMono-B.ttf'),
+  url('fonts/UbuntuMono-BI.ttf'),
+  url('fonts/UbuntuMono-RI.ttf');
 }
 
 html {
@@ -33,17 +34,12 @@ html {
   box-sizing: inherit;
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both
-}
-
 h1 {
   font-size: 3rem;
   margin-top: 1rem;
 }
 h2 {
+  flex: 0 0 100%;
   text-transform: uppercase;
   font-size: 1.5rem;
   margin-top: 0;
@@ -63,35 +59,61 @@ a:hover {
   background: white;
   color: #263238;
 }
+
 .collapsed {
   display: none;
 }
 .content-wrap {
   max-width: 1000px;
-  overflow: auto;
   border: solid 0.2rem;
+  border-radius: 2px;
   padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.table {
+section {
   display: flex;
-  width: 100%;
 }
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contacts a {
+  flex: 0 0 50;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.socialMedia {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.socialMedia a {
+  flex: 1 0 33;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+
+}
+
+.contacts a i, .socialMedia a i {
+  margin-right: 0.5rem;
+}
+
 
 .entry {
-  padding: 10px 0 10px 20px;
-  margin-bottom: 10px;
+  padding: 20px 10px 10px 10px;
+  margin: 0 5px 10px 5px;
+  flex: 2 0 400px;
 }
 
 .entry:after {
   content: "";
   display: table;
   clear: both
-}
-
-.entry:hover {
-  color: #263238;
-  font-weight: bold;
 }
 
 .uppercase {
@@ -108,11 +130,12 @@ a:hover {
 }
 
 .close {
-  width: 100%;
+  flex: 0 0 100%;
   margin-bottom: 0.5rem;
   padding: 0.3rem;
   border: solid 2px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .close:hover {
@@ -129,15 +152,31 @@ a:hover {
     text-align: center;
   }
 
-  header .socialMedia {
-    text-align: center;
-    margin: 1rem 0rem;
-  }
-
 header img {
-    width: 50%;
+    width: 100%;
     margin: 0px 0px 20px 0px;
   }
+
+  .cv-button {
+    border: solid #ff6188 2px;
+    color: #ff6188;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 0.2rem;
+    width: 100%;
+    height: 2rem;
+    display: block;
+    font-weight: bold;
+  }
+
+  .cv-button:hover {
+    background: #ff6188;
+  }
+
+  .socialMedia {
+    text-align: center;
+  }
+
   .nav-min {
     display: block;
   }
@@ -168,21 +207,19 @@ header img {
    font-size: 16px;
    color: white;
   }
-  .col-school {
-    width: 100%;
-    display: block;
-  }
 }
-
 
 /* Media Queries for medium screens (256px)
 -----------------------------------*/
-@media (min-width: 660px) {
+@media (min-width: 640px) {
   .content-wrap {
     margin: 0.5rem auto;
     border: solid 0.15rem;
   }
   header {
+    text-align: left;
+  }
+  .socialMedia {
     text-align: left;
   }
   .hobby-narrow {
@@ -193,28 +230,29 @@ header img {
     float: left;
   }
   .hobby-wide {
-    width: 85%;
+    /* width: 85%;
+    float: left; */
+    flex: 0 1 200px;
     min-height: 90px;
     padding: 0 20px 10px 20px;
-    float: left;
   }
   .col-narrow {
-    width: 30%;
+    /* width: 30%;
+    float: left; */
+    flex: 1 0 200px;
     min-height: 90px;
     padding-left: 20px;
     padding-bottom: 20px;
-    float: left;
   }
   .col-wide {
-    width: 70%;
+    /* width: 70%;
+    float: left; */
+    flex: 1 0 600px;
     min-height: 90px;
     padding: 0 20px 10px 20px;
-    float: left;
+
   }
-  #education .entry {
-    width: 50%;
-    display: inline-block;
-  }
+
 }
 
 /* Media Queries for large screens
@@ -223,15 +261,6 @@ header img {
   .content-wrap {
     margin: 1rem auto;
   }
-
-  header .socialMedia {
-    text-align: left;
-    margin: 1rem 0rem;
-  }
-
-  .header-top {
-    margin-top: 4rem;
-  }
   .nav-min {
     display: none;
   }
@@ -239,6 +268,7 @@ header img {
     position: sticky;
     display: block;
   }
+
   nav a {
     padding: 10px 20px;
     display: inline-block;
@@ -248,30 +278,6 @@ header img {
     font-size: 16px;
     color: white;
   }
-  header {
-    background: #263238;
-    box-shadow: 0px 0px 10px 1px #ff6188;
-  }
-  #skills {
-    background: #263238;
-    box-shadow: 0px 0px 10px 1px #fc9867;
-  }
-  #career {
-    background: #263238;
-    box-shadow: 0px 0px 10px 1px #ffd866;
-  }
-  #education {
-    background: #263238;
-    box-shadow: 0px 0px 10px 1px #a9dc76;
-  }
-  #hobbies {
-    background: #263238;
-    box-shadow: 0px 0px 10px 1px #78dce8;
-  }
-  #contact {
-    background: #263238;
-    box-shadow: 0px 0px 10px 1px #ab9df2;
-  }
 }
 
 /* Header
@@ -280,6 +286,7 @@ header img {
   margin-top: 1rem;
 }
 header {
+  margin-top: 4rem;
   color: #ff6188;
   border: #ff6188;
   margin-top: 4em;
@@ -307,18 +314,6 @@ header h2 {
   padding-bottom: 0.5rem;
 }
 
-header .socialMedia a {
-  padding: 0.2rem 1rem;
-}
-
-header .socialMedia a:hover {
-  color: #263238;
-  background: #ff6188;
-}
-
-header .socialMedia a i {
-  padding-right: 1rem;
-}
 
 /* Navigation
 -----------------------------*/
@@ -422,13 +417,19 @@ a[href^="#contact"]:hover {
   margin: 10px auto;
 }
 
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .col-skill {
-  display: inline-block;
   border: solid;
   justify-content: center;
   margin: 0px 5px 15px 5px;
-  width: 25%;
+  flex: 2 0 150px;
 }
+
 
 /* Work Experience stylesheet
 -------------------------------*/
@@ -441,8 +442,10 @@ a[href^="#contact"]:hover {
   Block level first entry and the other entries will be inline-block
 } */
 
-#career .entry:hover {
-  background: rgba(255,216,102,0.8);
+#career .entry {
+  /* color: #263238;
+  background: rgba(255,216,102,0.8); */
+  border: solid #ffd866 2px;
 }
 
 #career .close:hover {
@@ -472,8 +475,10 @@ h3 ~ p {
   position: relative;
 }
 
-#education .entry:hover {
-  background: rgba(169,220,118,0.8);
+#education .entry {
+  /* color: #263238;
+  background: rgba(169,220,118,0.8); */
+  border: solid #a9dc76 2px;
 }
 
 #education h2 {
@@ -500,14 +505,32 @@ h3 ~ p {
   position: relative;
 }
 
-#hobbies .entry:hover {
-  background: rgba(120,220,232,0.8);
+#hobbies .entry {
+  flex: 1 0 100px;
+  height: 150px;
+  margin: 0 0.2rem;
+  /* border: solid #78dce8 2px; */
+  text-align: center;
+}
+
+#hobbies p {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #263238;
+  background: #78dce8;
+  padding: 0.1rem 0.3rem;
 }
 
 #hobbies h2 {
   margin-top: 0.7rem;
   color: #263238;
   background: #78dce8;
+}
+
+#hobbies .table {
+  margin: 0 auto;
+
 }
 
 #hobbies h2:hover {
@@ -522,17 +545,15 @@ h3 ~ p {
 
 /* Footer
 ------------------------*/
-#contact {
+
+footer > * {
+  flex: 1 0 100%;
   text-align: center;
-  color: #ab9df2;
-  position: relative;
-  margin-bottom: 4em;
 }
 
-#contact h2 {
-  margin-top: 0.7rem;
-  color: #263238;
-  background: #ab9df2;
+#contact {
+  color: #ab9df2;
+  margin-bottom: 4em;
 }
 
 #contact a {
@@ -544,8 +565,21 @@ h3 ~ p {
   background: rgba(171,157,242,1);
 }
 
+#contact .contacts a {
+  flex: 1 0 auto;
+  font-size: 18px;
+}
+
+#contact .socialMedia a {
+  text-align: center;
+  flex: 1 0 auto;
+  padding: 1rem 1rem;
+  margin: 0 1rem;
+}
+
 #contact a[href^="#top"]{
   margin-bottom: 1rem;
+  padding: 1rem 0;
 }
 
 #contact a[href^="#top"]:hover {
@@ -553,38 +587,14 @@ h3 ~ p {
   color: #263238;
 }
 
-#contact .socialMedia a {
-  text-align: center;
-  padding: 1rem 2rem;
-  margin: 0 1rem;
-}
+
 
 #contact h2 {
+  margin-top: 0.7rem;
+  color: #263238;
+  background: #ab9df2;
   padding: 5px 15px;
   margin-top: 10px;
   margin-bottom: 10px;
   border: 0;
-}
-
-.contact-me {
-  font-size: 1.5rem;
-  justify-content: center;
-  vertical-align: middle;
-  line-height: 45px;
-  font-weight: bolder;
-  width: 100%;
-  margin-top: 10px;
-  padding: 0px 5px;
-  display: inline-flex;
-  text-decoration: none;
-}
-
-#contact a {
-  padding: 10px;
-  display: inline-flex;
-  text-decoration: none;
-}
-
-footer .fas {
-  margin: 0;
 }
