@@ -97,7 +97,7 @@ main.appendChild(skillsSection);
 //Populate the Skills section
 for (let i = 0; i < SKILLS.length; i++) {
   const entry = document.createElement("div");
-  entry.classList.add("col-skill");
+  entry.classList.add("entry");
 
   const skillHead = document.createElement("h3");
   skillHead.innerHTML = `<i class="${SKILLS[i].icon}">&nbsp;${SKILLS[i].title}`;
@@ -145,7 +145,7 @@ for (let i = 0; i < JOBS.length; i++) {
   const jobContentNarrow = `
           <div class="col-narrow">
             <h3>${JOBS[i].title}</h3>
-            <p class="uppercase">${JOBS[i].company}, ${JOBS[i].location}</p>
+            <p>${JOBS[i].company}, ${JOBS[i].location}</p>
             <p>${JOBS[i].startDate} - ${JOBS[i].endDate}</p>
           </div>
           `;
@@ -156,7 +156,7 @@ for (let i = 0; i < JOBS.length; i++) {
   }
 
   const jobContentWide = `
-  <div class="col-wide description">
+  <div class="col-wide">
     <p>${JOBS[i].summary}</p>
     <ul>
       ${jobDetails}
@@ -195,9 +195,11 @@ for (let i = 0; i < SCHOOLS.length; i++) {
   entry.classList.add("entry");
 
   const schoolContent = `
+        <div class="col-wide">
             <h3>${SCHOOLS[i].course}</h3>
             <p class="uppercase">${SCHOOLS[i].degree}, ${SCHOOLS[i].qualification}</p>
             <p>${SCHOOLS[i].location}, ${SCHOOLS[i].date}</p>
+        </div>
           `;
 
   entry.innerHTML = schoolContent;
@@ -230,10 +232,8 @@ for (let i = 0; i < HOBBIES.length; i++) {
   entry.classList.add("entry");
 
   const hobbyContent = `
-    <div>
       <i class="${HOBBIES[i].icon}"></i>
       <p>${HOBBIES[i].title}</p>
-    </div>
   `;
   entry.innerHTML = hobbyContent;
   hobbyList.appendChild(entry);
