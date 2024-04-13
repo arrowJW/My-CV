@@ -10,11 +10,20 @@ function Job(title,company,location,startDate,endDate,summary,details) {
 
 const JOBS = [
   new Job(
+    "Media Assistant",
+    "Care and Relief for the Young",
+    "Southampton",
+    "January 2023",
+    "Now",
+    "[Description to be added]",
+    ["Key achievement to be added"]
+  ),
+  new Job(
     "Media Designer",
     "Unit 12 CIC",
     "Winchester",
     "October 2021",
-    "Now",
+    "2023",
     "Weekly projects driven to promote the community services and upcoming events offerred by Unit 12, utilizing filming, photography, animation, art and graphic design, illustration and web design.",
     ["Optimised Unit 12's website (based on Squarespace's) SEO and UX, which has dramatically improved search engine and visitor traffic; and incorporated new features as requested by the client, such as a Youth Employment Hub.",
     "Designed and created a logo for Unit 12's new Community Clothes Pantry.",
