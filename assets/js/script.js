@@ -54,12 +54,7 @@ const email = document.createElement("a");
 email.href = `${CONTACTS[0].link}`;
 email.innerHTML = `<i class="${CONTACTS[0].iconS}"></i>meetme.jw_arrow@erine.email`;
 
-const mobile = document.createElement("a");
-mobile.href = `${CONTACTS[1].link}`;
-mobile.innerHTML = `<i class="${CONTACTS[1].iconS}"></i>07710 423 543`;
-
 profileContacts.appendChild(email);
-profileContacts.appendChild(mobile);
 
 profileBio.appendChild(profileName);
 profileBio.appendChild(profileTitle);
@@ -345,12 +340,7 @@ const email2 = document.createElement("a");
 email2.href = `${CONTACTS[0].link}`;
 email2.innerHTML = `<i class="${CONTACTS[0].iconS}"></i>meetme.jw_arrow@erine.email`;
 
-const mobile2 = document.createElement("a");
-mobile2.href = `${CONTACTS[1].link}`;
-mobile2.innerHTML = `<i class="${CONTACTS[1].iconS}"></i>07710 423 543`;
-
 footerContacts.appendChild(email2);
-footerContacts.appendChild(mobile2);
 
 const contactListBottom = document.createElement("div");
 contactListBottom.classList.add("socialMedia");
